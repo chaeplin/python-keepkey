@@ -38,11 +38,11 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_Success', index=2, number=2,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_Failure', index=3, number=3,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_ChangePin', index=4, number=4,
@@ -66,7 +66,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_Entropy', index=9, number=10,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_GetPublicKey', index=10, number=11,
@@ -74,7 +74,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_PublicKey', index=11, number=12,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_LoadDevice', index=12, number=13,
@@ -94,11 +94,11 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_Features', index=16, number=17,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_PinMatrixRequest', index=17, number=18,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_PinMatrixAck', index=18, number=19,
@@ -110,7 +110,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_TxRequest', index=20, number=21,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_TxAck', index=21, number=22,
@@ -130,7 +130,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_ButtonRequest', index=25, number=26,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_ButtonAck', index=26, number=27,
@@ -142,11 +142,11 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_Address', index=28, number=30,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_EntropyRequest', index=29, number=35,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_EntropyAck', index=30, number=36,
@@ -162,11 +162,11 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_MessageSignature', index=33, number=40,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_PassphraseRequest', index=34, number=41,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_PassphraseAck', index=35, number=42,
@@ -178,7 +178,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_TxSize', index=37, number=44,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_RecoveryDevice', index=38, number=45,
@@ -186,7 +186,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_WordRequest', index=39, number=46,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_WordAck', index=40, number=47,
@@ -194,7 +194,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_CipheredKeyValue', index=41, number=48,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_EncryptMessage', index=42, number=49,
@@ -202,7 +202,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_EncryptedMessage', index=43, number=50,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_DecryptMessage', index=44, number=51,
@@ -210,7 +210,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_DecryptedMessage', index=45, number=52,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_SignIdentity', index=46, number=53,
@@ -218,7 +218,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_SignedIdentity', index=47, number=54,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_GetFeatures', index=48, number=55,
@@ -230,7 +230,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_EthereumAddress', index=50, number=57,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_EthereumSignTx', index=51, number=58,
@@ -238,7 +238,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_EthereumTxRequest', index=52, number=59,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_EthereumTxAck', index=53, number=60,
@@ -246,7 +246,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_CharacterRequest', index=54, number=80,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\230\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\230\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_CharacterAck', index=55, number=81,
@@ -262,27 +262,27 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_DebugLinkDecision', index=58, number=100,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\240\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\240\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_DebugLinkGetState', index=59, number=101,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\240\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\240\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_DebugLinkState', index=60, number=102,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\250\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\250\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_DebugLinkStop', index=61, number=103,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\240\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\240\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_DebugLinkLog', index=62, number=104,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\250\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\250\265\030\001')),
       type=None),
     _descriptor.EnumValueDescriptor(
       name='MessageType_DebugLinkFillConfig', index=63, number=105,
-      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b(_b('\250\265\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.EnumValueOptions(), _b('\250\265\030\001')),
       type=None),
   ],
   containing_type=None,
