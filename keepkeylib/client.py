@@ -19,6 +19,9 @@
 
 from __future__ import print_function, absolute_import
 
+import sys
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+
 import os
 import sys
 import time
@@ -378,10 +381,10 @@ class DebugLinkMixin(object):
         self.pin_correct = pin_correct
 
     def set_passphrase(self, passphrase):
-        self.passphrase = unicode(str(bytearray(Mnemonic.normalize_string(passphrase), 'utf-8')), 'utf-8')
+        self.passphrase = _b(str(bytearray(Mnemonic.normalize_string(passphrase)), 'utf-8')).decode('utf-8')
 
     def set_mnemonic(self, mnemonic):
-        self.mnemonic = unicode(str(bytearray(Mnemonic.normalize_string(mnemonic), 'utf-8')), 'utf-8').split(' ')
+        self.mnemonic = unicode(str(bytearray(Mnemonic.normalize_string(mnemonic), 'utf-8'))).decode('utf-8').split(' ')
 
     def call_raw(self, msg):
 
@@ -744,7 +747,7 @@ class ProtocolMixin(object):
         tx.outputs.extend(outputs)
 
         txes = {}
-        txes[''] = tx
+        txes[b''] = tx
 
         known_hashes = []
         for inp in inputs:
@@ -779,7 +782,7 @@ class ProtocolMixin(object):
 
             # Prepare structure for signatures
             signatures = [None] * len(inputs)
-            serialized_tx = ''
+            serialized_tx = b''
 
             counter = 0
             while True:
@@ -905,7 +908,7 @@ class ProtocolMixin(object):
             raise Exception("Invalid response, expected EntropyRequest")
 
         external_entropy = self._get_local_entropy()
-        log("Computer generated entropy: " + binascii.hexlify(external_entropy))
+        log("Computer generated entropy: " + binascii.hexlify(external_entropy).decode('ascii'))
         ret = self.call(proto.EntropyAck(entropy=external_entropy))
         self.init_device()
         return ret

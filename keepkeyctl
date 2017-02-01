@@ -21,16 +21,18 @@
 
 from __future__ import print_function
 import os
+import sys
 import binascii
 import argparse
 import json
 import base64
 import urllib
 import tempfile
+from io import BytesIO
 
-from keepkeylib.client import KeepKeyClient, KeepKeyClientDebug
+from keepkeylib.client import KeepKeyClient, KeepKeyClientDebug, CallException
 
-def parse_args(commands):
+def init_parser(commands):
     parser = argparse.ArgumentParser(description='Commandline tool for KeepKey devices.')
     parser.add_argument('-v', '--verbose', dest='verbose', action='store_true', help='Prints communication to device')
     parser.add_argument('-t', '--transport', dest='transport',  choices=['usb', 'serial', 'pipe', 'socket', 'bridge'], default='usb', help="Transport used for talking with the device")
@@ -57,7 +59,7 @@ def parse_args(commands):
         item.set_defaults(func=func)
         item.set_defaults(cmd=cmd)
 
-    return parser.parse_args()
+    return parser
 
 def get_transport(transport_string, path, **kwargs):
     if transport_string == 'usb':
@@ -300,32 +302,22 @@ class Commands(object):
             raise Exception("Must provide firmware filename or URL")
 
         if args.file:
-            fp = open(args.file, 'r')
+            fp = open(args.file, 'rb').read()
         elif args.url:
+            import requests
             print("Downloading from", args.url)
-            resp = urllib.urlretrieve(args.url)
-            fp = open(resp[0], 'r')
-            urllib.urlcleanup() # We still keep file pointer open
+            r = requests.get(args.url)
+            fp = r.content
 
-        if fp.read(8) == '54525a52':
-            print("Converting firmware to binary")
 
-            fp.seek(0)
-            fp_old = fp
-
-            fp = tempfile.TemporaryFile()
-            fp.write(binascii.unhexlify(fp_old.read()))
-
-            fp_old.close()
-
-        fp.seek(0)
-        if fp.read(4) != 'KPKY':
-            raise Exception("KeepKey firmware header expected")
+        if fp[:8] == b'54525a52':
+            fp = binascii.unhexlify(fp)
+        if fp[:4] != b'KPKY':
+            raise CallException(types.Failure_FirmwareError, "Keepkey firmware header expected")
 
         print("Please confirm action on device...")
 
-        fp.seek(0)
-        return self.client.firmware_update(fp=fp)
+        return self.client.firmware_update(fp=BytesIO(fp))
 
     list.help = 'List connected KeepKey USB devices'
     ping.help = 'Send ping message'
@@ -542,34 +534,46 @@ def qt_pin_func(input_text, message=None):
 '''
 
 def main():
-    args = parse_args(Commands)
+    parser = init_parser(Commands)
+    args = parser.parse_args()
 
-    if args.cmd == 'list':
-        devices = list_usb()
-        if args.json:
-            print(json.dumps(devices))
+    if not hasattr(args, 'cmd'):
+        parser.print_help()
+        exit(0)
+
+    try:
+
+        if args.cmd == 'list':
+            devices = list_usb()
+            if args.json:
+                print(json.dumps(devices))
+            else:
+                for dev in devices:
+                    if dev[1] != None:
+                        print("%s - debuglink enabled" % dev[0])
+                    else:
+                        print(dev[0])
+            return
+
+        transport = get_transport(args.transport, args.path)
+        if args.verbose:
+            client = KeepKeyClientDebug(transport)
         else:
-            for dev in devices:
-                if dev[1] != None:
-                    print("%s - debuglink enabled" % dev[0])
-                else:
-                    print(dev[0])
-        return
+            client = KeepKeyClient(transport)
 
-    transport = get_transport(args.transport, args.path)
-    if args.verbose:
-        client = KeepKeyClientDebug(transport)
-    else:
-        client = KeepKeyClient(transport)
+        cmds = Commands(client)
 
-    cmds = Commands(client)
+        res = args.func(cmds, args)
 
-    res = args.func(cmds, args)
+        if args.json:
+            print(json.dumps(res, sort_keys=True, indent=4))
+        else:
+            print(res)
+    except CallException as e:
+        status, message = e.args
+        sys.stderr.write('failure: {message}\n'.format(message=message))
+        exit(status)
 
-    if args.json:
-        print(json.dumps(res, sort_keys=True, indent=4))
-    else:
-        print(res)
 
 if __name__ == '__main__':
     main()
